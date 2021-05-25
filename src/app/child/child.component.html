@@ -1,0 +1,33 @@
+<h3 class="p3 text-center">Candidates</h3>
+<input type="checkbox" id="mailCheckbox" value="isChecked" (change)="filterByGender('Male')"> Male
+<input type="checkbox" value="isChecked" (click)="filterByGender('Female')"> Female
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Gender</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{user.id}}</td>
+      <td>{{user.first_name}}</td>
+      <td>{{user.last_name}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.gender}}</td>
+    </tr>
+  </tbody>
+</table>
+<div>
+  <h3>Add New Candidate</h3>
+
+  <input class="form-group" id="firstName" placeholder ="First Name"   type="text" required [(ngModel)]="input_first_name">
+  <input class="form-group" id="email"  placeholder ="Last Name" type="text" required [(ngModel)]="input_last_name">
+  <input class="form-group" id="gender" placeholder ="Email"  type="text" required [(ngModel)]="input_email">
+  <input class="form-group" id="gender" value=[isChecked] placeholder="gender"  type="radio" required [(ngModel)]="input_female"> Female
+  <input class="form-group" id="gender" value=[isChecked] placeholder="gender"  type="radio" required [(ngModel)]="input_male"> Male
+  <button (click)="addCandidate()" style="background-color:green">Add</button>
+</div>
